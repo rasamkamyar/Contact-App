@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from "./form.module.css";
 
 const Form = () => {
   const initData = {
@@ -25,7 +26,7 @@ const Form = () => {
   };
 
   return (
-    <div>
+    <div className={styles.container}>
       <label htmlFor="firstName">First Name:</label>
       <input
         type="text"
@@ -53,47 +54,53 @@ const Form = () => {
         placeholder="Age"
       />
 
-      <label>
-        <input
-          type="radio"
-          name="gender"
-          value="male"
-          checked={form.gender === "male"}
-          onChange={handleChange}
-        />
-        Male
-      </label>
+      <div className={styles.radioGroup}>
+        <label>
+          <input
+            type="radio"
+            name="gender"
+            value="male"
+            checked={form.gender === "male"}
+            onChange={handleChange}
+          />
+          Male
+        </label>
 
-      <label>
-        <input
-          type="radio"
-          name="gender"
-          value="female"
-          checked={form.gender === "female"}
-          onChange={handleChange}
-        />
-        Female
-      </label>
+        <label>
+          <input
+            type="radio"
+            name="gender"
+            value="female"
+            checked={form.gender === "female"}
+            onChange={handleChange}
+          />
+          Female
+        </label>
+      </div>
 
-      <label>
-        Is Favorite:
-        <input
-          type="checkbox"
-          name="isFavorite"
-          checked={form.isFavorite}
-          onChange={handleChange}
-        />
-      </label>
+      <div className={styles.checkboxGroup}>
+        <label>
+          Is Favorite:
+          <input
+            type="checkbox"
+            name="isFavorite"
+            checked={form.isFavorite}
+            onChange={handleChange}
+          />
+        </label>
+      </div>
 
-      <label>
-        Category:
-        <select name="category" value={form.category} onChange={handleChange}>
-          <option value="family">Family</option>
-          <option value="friends">Friends</option>
-          <option value="work">Work</option>
-          <option value="others">Others</option>
-        </select>
-      </label>
+      <div className={styles.selectGroup}>
+        <label>
+          Category:
+          <select name="category" value={form.category} onChange={handleChange}>
+            <option value="family">Family</option>
+            <option value="friends">Friends</option>
+            <option value="work">Work</option>
+            <option value="others">Others</option>
+          </select>
+        </label>
+      </div>
 
       <button onClick={handleClick}>Add to Contact</button>
     </div>
