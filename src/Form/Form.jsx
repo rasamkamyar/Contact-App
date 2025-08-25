@@ -1,17 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./form.module.css";
+import List from "../List/List";
+import { v4 } from "uuid";
+
+const initData = {
+  id: "",
+  firstName: "",
+  lastName: "",
+  age: 0,
+  gender: "male",
+  category: "family",
+  isFavorite: false,
+};
 
 const Form = () => {
-  const initData = {
-    firstName: "",
-    lastName: "",
-    age: 0,
-    gender: "",
-    category: "family",
-    isFavorite: false,
-  };
-
   const [form, setForm] = useState(initData);
+  const [list, setList] = useState([]);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -21,8 +25,15 @@ const Form = () => {
     }));
   };
 
-  const handleClick = () => {
-    console.log("Submitted Contact:", form);
+  const addHandler = () => {
+    const contact = { ...form, id: v4() };
+    setList((prev) => [...prev, contact]);
+    setForm(initData);
+  };
+
+  const deleteHandler = (id) => {
+   const filteredList = list.filter((li) => li.id !== id);
+    setList(filteredList);
   };
 
   return (
@@ -102,7 +113,9 @@ const Form = () => {
         </label>
       </div>
 
-      <button onClick={handleClick}>Add to Contact</button>
+      <button onClick={addHandler}>Add to Contact</button>
+
+      <List list={list} deleteHandler={deleteHandler} />
     </div>
   );
 };
