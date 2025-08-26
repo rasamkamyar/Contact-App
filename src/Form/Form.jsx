@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import styles from "./form.module.css";
+import { useState } from "react";
 import List from "../List/List";
 import { v4 } from "uuid";
+import styles from "./form.module.css";
 
 const initData = {
   id: "",
@@ -32,7 +32,7 @@ const Form = () => {
   };
 
   const deleteHandler = (id) => {
-   const filteredList = list.filter((li) => li.id !== id);
+    const filteredList = list.filter((li) => li.id !== id);
     setList(filteredList);
   };
 
@@ -65,7 +65,7 @@ const Form = () => {
         placeholder="Age"
       />
 
-      <div className={styles.radioGroup}>
+      <div>
         <label>
           <input
             type="radio"
@@ -89,7 +89,7 @@ const Form = () => {
         </label>
       </div>
 
-      <div className={styles.checkboxGroup}>
+      <div>
         <label>
           Is Favorite:
           <input
@@ -101,7 +101,7 @@ const Form = () => {
         </label>
       </div>
 
-      <div className={styles.selectGroup}>
+      <div>
         <label>
           Category:
           <select name="category" value={form.category} onChange={handleChange}>

@@ -1,0 +1,23 @@
+.header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: linear-gradient(135deg, #08395f, #218dda);
+  color: #fff;
+  border-radius: 0 0 18px 18px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.subtitle {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 0.5rem;
+  color: rgba(255, 255, 255, 0.85);
+}

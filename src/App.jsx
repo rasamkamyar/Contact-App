@@ -1,12 +1,18 @@
-import Form from "./Form/Form";
+import React from "react";
 import Header from "./Header/Header";
+import Form from "./Form/Form";
+import Footer from "./Footer/Footer";
+import "./app.css";
 
 const App = () => {
   return (
-    <>
+    <div className="appContainer">
       <Header />
-      <Form />
-    </>
+      <main className="mainContent">
+        <Form />
+      </main>
+      <Footer />
+    </div>
   );
 };
 

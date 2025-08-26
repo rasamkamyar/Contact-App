@@ -1,11 +1,11 @@
-import React from "react";
+import styles from "./Header.module.css";
 
 const Header = () => {
   return (
-    <div>
-      <h1>Contact App</h1>
-      <p>Sample React Project for Beginners</p>
-    </div>
+    <header className={styles.header}>
+      <h1 className={styles.title}>Contact App</h1>
+      <p className={styles.subtitle}>Sample React Project for Beginners</p>
+    </header>
   );
 };
 
