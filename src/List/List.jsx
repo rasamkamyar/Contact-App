@@ -14,19 +14,24 @@ const List = ({ list, deleteHandler }) => {
                   {item.firstName} {item.lastName}
                 </h3>
                 <p>
-                  Age: {item.age} | Gender: {item.gender} | Category:{" "}
+                  Number: {item.number} | Gender: {item.gender} | Category:{" "}
                   {item.category}
                 </p>
                 {item.isFavorite && (
                   <span className={styles.favorite}>★ Favorite</span>
                 )}
               </div>
-              <button
-                className={styles.deleteBtn}
-                onClick={() => deleteHandler(item.id)}
-              >
-                Delete
-              </button>
+              <div className={styles.btnContainer}>
+                <button
+                  className={`${styles.btn} ${styles.deleteBtn}`}
+                  onClick={() => deleteHandler(item.id)}
+                >
+                  Delete
+                </button>
+                <button className={`${styles.btn} ${styles.editBtn}`} onClick={() => {}}>
+                  Edit
+                </button>
+              </div>
             </li>
           ))}
         </ul>

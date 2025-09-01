@@ -57,8 +57,7 @@
   font-size: 0.9rem;
 }
 
-.deleteBtn {
-  background: #e63946;
+.btn {
   color: #fff;
   border: none;
   border-radius: 10px;
@@ -72,7 +71,25 @@
 .deleteBtn:hover {
   background: #c92a38;
 }
+.editBtn:hover {
+  background: #4b5563;
+}
 
-.deleteBtn:active {
+.btn:active {
   transform: scale(0.95);
+}
+
+.deleteBtn {
+    background: #e63946;
+}
+.editBtn {
+    background: #6b7280;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
 }

@@ -7,7 +7,7 @@ const initData = {
   id: "",
   firstName: "",
   lastName: "",
-  age: 0,
+  number: 0,
   gender: "male",
   category: "family",
   isFavorite: false,
@@ -56,16 +56,16 @@ const Form = () => {
         placeholder="Last Name"
       />
 
-      <label htmlFor="age">Age:</label>
+      <label htmlFor="number">Number:</label>
       <input
         type="number"
-        name="age"
-        value={form.age}
+        name="number"
+        value={form.number}
         onChange={handleChange}
-        placeholder="Age"
+        placeholder="Number"
       />
 
-      <div>
+      <div className={styles.radioGroup}>
         <label>
           <input
             type="radio"
@@ -89,7 +89,7 @@ const Form = () => {
         </label>
       </div>
 
-      <div>
+      <div className={styles.checkboxGroup}>
         <label>
           Is Favorite:
           <input
@@ -101,7 +101,7 @@ const Form = () => {
         </label>
       </div>
 
-      <div>
+      <div className={styles.selectGroup}>
         <label>
           Category:
           <select name="category" value={form.category} onChange={handleChange}>
